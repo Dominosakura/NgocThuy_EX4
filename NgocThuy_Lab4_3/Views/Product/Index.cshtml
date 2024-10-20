@@ -1,0 +1,50 @@
+﻿@model IEnumerable<NgocThuy_Lab4_3.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<h2>Danh sách sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Add ", "Create", null, new { @class = "btn btn-success", @title = "Thêm sản phẩm" })
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Unit</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Unit</td>
+                <td>@item.Price</td>
+                <td>
+                    <a href="@Url.Action("Details", "Product", new { id = item.ProductId })" title="Chi tiết sản phẩm">
+                        <i class="fas fa-info-circle"></i>
+                    </a> |
+                    <a href="@Url.Action("Edit", "Product", new { id = item.ProductId })" title="Sửa sản phẩm">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="@Url.Action("Delete", "Product", new { id = item.ProductId })" title="Xóa sản phẩm">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

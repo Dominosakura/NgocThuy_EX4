@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "RegisterDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Chi Tiết Đăng Ký Đơn Vị Vận Chuyển</h2>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3>Thông Tin Đơn Vị Vận Chuyển</h3>
+            <ul class="list-unstyled">
+                <li><strong>Tên Đơn Vị Vận Chuyển:</strong> @TempData["TenDonVi"]</li>
+                <li><strong>Loại Hình Doanh Nghiệp:</strong> @TempData["LoaiHinhDoanhNghiep"]</li>
+                <li><strong>Số Lượng Nhân Viên:</strong> @TempData["SoLuongNV"]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h3>Thông Tin Liên Hệ</h3>
+            <ul class="list-unstyled">
+                <li><strong>Địa Chỉ:</strong> @TempData["DiaChi"]</li>
+                <li><strong>Người Liên Hệ:</strong> @TempData["NguoiLienHe"]</li>
+                <li><strong>Số Điện Thoại:</strong> @TempData["SoDienThoai"]</li>
+                <li><strong>Số Fax:</strong> @TempData["SoFax"]</li>
+                <li><strong>Email:</strong> @TempData["Email"]</li>
+                <li><strong>Địa Chỉ Website:</strong> @TempData["DiaChiWebsite"]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h3>Thông Tin Đăng Nhập</h3>
+            <ul class="list-unstyled">
+                <li><strong>Tên Đăng Nhập:</strong> @TempData["TenDangNhap"]</li>
+                <li><strong>Mật Khẩu:</strong> **********</li>
+                <li><strong>Xác Nhận Mật Khẩu:</strong> **********</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h3>Nhận E-Mail</h3>
+            <p><strong>Nhận thư điện tử:</strong> @TempData["NhanThuDienTu"]</p>
+        </div>
+    </div>
+
+
+   
+</div>

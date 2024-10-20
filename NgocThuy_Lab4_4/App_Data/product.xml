@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NhaHang>
+  <Category CategoryId="L01" CategoryName="Lẩu">
+    <Product>
+      <ProductId>P001</ProductId>
+      <ProductName>Lẩu vịt</ProductName>
+      <Unit>Nồi</Unit>
+      <Price>15000</Price>
+    </Product>
+    <Product>
+      <ProductId>P002</ProductId>
+      <ProductName>Lẩu cá kèo</ProductName>
+      <Unit>Nồi</Unit>
+      <Price>25000</Price>
+    </Product>
+    <Product>
+      <ProductId>P003</ProductId>
+      <ProductName>Lẩu uyên ương</ProductName>
+      <Unit>Nồi</Unit>
+      <Price>100000</Price>
+    </Product>
+  </Category>
+  <Category CategoryId="L02" CategoryName="Tôm">
+    <Product>
+      <ProductId>P001</ProductId>
+      <ProductName>Tôm sốt thái</ProductName>
+      <Unit>kg</Unit>
+      <Price>150000</Price>
+    </Product>
+    <Product>
+      <ProductId>P002</ProductId>
+      <ProductName>Tôm sốt me</ProductName>
+      <Unit>Kg</Unit>
+      <Price>150000</Price>
+    </Product>
+  </Category>
+</NhaHang>

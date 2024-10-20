@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "PrintPrimeNumber";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["message1"]</h2>
+
+<ul>
+    @foreach (var num in ViewData["prinumber"] as string[])
+    {
+        <li>@num</li>
+    }
+</ul>
+

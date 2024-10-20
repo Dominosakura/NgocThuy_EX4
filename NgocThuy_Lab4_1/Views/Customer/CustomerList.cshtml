@@ -1,0 +1,49 @@
+﻿
+
+@{
+    ViewBag.Title = "CustomerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách khách hàng</h2>
+
+@{
+
+    var listcustomer = ViewBag.listcustomer as List<NgocThuy_Lab4_1.Models.Customer>;
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã KH</th>
+            <th>Họ và tên</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Số dư</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* Hiển thị danh sách khách hàng *@
+        @if (listcustomer != null && listcustomer.Any())
+        {
+            foreach (var c in listcustomer)
+            {
+                <tr>
+                    <td>@c.CustomerId</td>
+                    <td>@c.FullName</td>
+                    <td>@c.Address</td>
+                    <td>@c.Email</td>
+                    <td>@c.Phone</td>
+                    <td>@c.Balance</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center">Không có dữ liệu khách hàng.</td>
+            </tr>
+        }
+    </tbody>
+</table>

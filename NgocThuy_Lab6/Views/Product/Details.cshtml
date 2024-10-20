@@ -1,0 +1,38 @@
+﻿@model NgocThuy_Lab6.Models.Product
+
+@{
+    ViewBag.Title = "Product Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="my-4">@Model.ProductName</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Product Information</h5>
+
+        <div class="row mb-3">
+            <div class="col-sm-4">
+                <strong>Product Name:</strong>
+            </div>
+            <div class="col-sm-8">
+                @Model.ProductName
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4">
+                <strong>Price:</strong>
+            </div>
+            <div class="col-sm-8">
+                @Model.Price
+            </div>
+        </div>
+
+        <div class="mt-4">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }, new { @class = "btn btn-primary ml-2" })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.ProductId }, new { @class = "btn btn-danger ml-2" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "ViewBagTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Dữ liệu nhận được từ ViewBag</h2>
+
+    <div class="text-center">
+        <h3 class="text-secondary">
+            @ViewBag.message1
+        </h3>
+        <h3 class="text-secondary">
+            @ViewBag.message2
+        </h3>
+    </div>
+
+    <h2 class="text-primary mt-5">Danh sách sinh viên</h2>
+
+    <ul class="list-group">
+        @foreach (var st in ViewBag.students)
+        {
+            <li class="list-group-item">
+                <h5 class="text-dark">@st</h5>
+            </li>
+        }
+    </ul>
+</div>

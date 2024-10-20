@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "PrintFactorial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["message1"]</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Số</th>
+        <th>Giai thừa</th>
+    </tr>
+
+    @if (ViewData["factorials"] != null)
+    {
+        var factorials = ViewData["factorials"] as List<int>;
+        for (int i = 0; i < factorials.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@factorials[i]</td>
+            </tr>
+        }
+    }
+</table>

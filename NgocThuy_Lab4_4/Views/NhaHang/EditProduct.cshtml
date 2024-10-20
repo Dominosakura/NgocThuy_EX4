@@ -1,0 +1,18 @@
+﻿@using (Html.BeginForm("DeleteProductConfirmed", "NhaHang", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+
+    <div class="alert alert-danger">
+        <p>Bạn có chắc chắn muốn xóa sản phẩm này không?</p>
+        <ul>
+            <li><strong>Mã sản phẩm:</strong> @Model.ProductId</li>
+            <li><strong>Tên sản phẩm:</strong> @Model.ProductName</li>
+            <li><strong>Đơn vị:</strong> @Model.Unit</li>
+            <li><strong>Giá:</strong> @Model.Price.ToString("C")</li>
+        </ul>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    @Html.ActionLink("Hủy", "Index", new { categoryId = ViewBag.CategoryId }, new { @class = "btn btn-secondary" })
+}

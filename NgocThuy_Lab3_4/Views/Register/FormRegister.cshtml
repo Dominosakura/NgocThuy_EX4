@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "FormRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .bg-purple {
+        background-color: #e5e3f6;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+  
+</style>
+
+<h2 class="text-center">Đăng Ký</h2>
+<div class="container">
+    @using (Html.BeginForm("RegisterDetails", "Register", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+    {
+        <table class="table table-bordered" >
+            <tr>
+                <td colspan="2">
+                    <h3 class="bg-purple">Thông Tin Đơn Vị Vận Chuyển</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Tên Đơn Vị Vận Chuyển (*)")
+                </td>
+                <td>
+                    @Html.TextBox("txtTenDonVi", null, new { @required = "required", @class = "form-control ", @placeholder = "Nhập tên đơn vị" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Loại Hình Doanh Nghiệp (*)")
+                </td>
+                <td>
+                    @Html.DropDownList("txtLoaiHinhDoanhNghiep", new SelectList(ViewBag.listType, "ID", "Name"), new { @required = "required", @class = "form-control input-width" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Số Lượng Nhân Viên")
+                </td>
+                <td>
+                    @Html.TextBox("SoLuongNV", null, new { @class = "form-control input-width", @placeholder = "Nhập số lượng nhân viên" })
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <h3 class="bg-purple">Thông Tin Liên Hệ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Địa Chỉ (*)")
+                </td>
+                <td>
+                    @Html.TextBox("txtDiaChi", null, new { @required = "required", @class = "form-control input-width", @placeholder = "Nhập địa chỉ" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Người Liên Hệ (*)")
+                </td>
+                <td>
+                    @Html.TextBox("txtNguoiLienHe", null, new { @required = "required", @class = "form-control input-width", @placeholder = "Nhập người liên hệ" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Số Điện Thoại (*)")
+                </td>
+                <td>
+                    @Html.TextBox("txtSoDienThoai", null, new { @required = "required", @class = "form-control input-width", @placeholder = "Nhập số điện thoại" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Số Fax")
+                </td>
+                <td>
+                    @Html.TextBox("txtSoFax", null, new { @class = "form-control input-width", @placeholder = "Nhập số fax" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Email")
+                </td>
+                <td>
+                    @Html.TextBox("txtEmail", null, new { @type = "email", @class = "form-control input-width", @placeholder = "Nhập email" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Địa Chỉ Website")
+                </td>
+                <td>
+                    @Html.TextBox("txtDiaChiWebsite", null, new { @class = "form-control input-width", @placeholder = "Nhập địa chỉ website" })
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <h3 class="bg-purple">Thông Tin Đăng Nhập</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Tên Đăng Nhập (*)")
+                </td>
+                <td>
+                    @Html.TextBox("txtTenDangNhap", null, new { @required = "required", @class = "form-control input-width", @placeholder = "Nhập tên đăng nhập" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Mật Khẩu (*)")
+                </td>
+                <td>
+                    @Html.Password("txtMatKhau", null, new { @required = "required", @class = "form-control input-width", @placeholder = "Nhập mật khẩu" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="control-label col-md-3">
+                    @Html.Label("Xác Nhận Mật Khẩu (*)")
+                </td>
+                <td>
+                    @Html.Password("txtXacNhanMatKhau", null, new { @required = "required", @class = "form-control input-width", @placeholder = "Xác nhận mật khẩu" })
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <h3 class="bg-purple">Nhận E-Mail</h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h5>Nhận Thư Điện Tử</h5>
+                    <div class="form-check">
+                        @Html.RadioButton("txtNhanThuDienTu", "Nhận", true, new { @class = "form-check-input", id = "nhan" })
+                        <label class="form-check-label" for="nhan">Nhận</label>
+                    </div>
+                    <div class="form-check">
+                        @Html.RadioButton("txtNhanThuDienTu", "Không nhận", false, new { @class = "form-check-input", id = "khongNhan" })
+                        <label class="form-check-label" for="khongNhan">Không nhận</label>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="form-group">
+            <div class="col-md-9 col-md-offset-3">
+                <input type="submit" value="Cập Nhật" class="btn btn-primary" />
+                <a  class="btn btn-secondary">Hủy Bỏ Cập Nhật</a>
+            </div>
+        </div>
+    }
+</div>

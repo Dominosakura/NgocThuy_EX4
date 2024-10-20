@@ -1,0 +1,80 @@
+﻿@model IEnumerable<NgocThuy_Lab6.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products</h2>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .action-link {
+        margin-right: 5px;
+    }
+
+
+    .btn-purple {
+        background-color: #6f42c1;
+        border-color: #6f42c1;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .btn-purple:hover {
+            background-color: #5a33a7;
+            border-color: #5a33a7;
+        }
+</style>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "action-link" }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }, new { @class = "action-link" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "action-link" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-purple" })

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Bảng cửu chương";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["message1"]</h2>
+
+<table class="table table-bordered">
+    @foreach (var item in (Dictionary<int, List<string>>)ViewData["multiplicationTable"])
+    {
+        <tr>
+            <td>
+                <h4>Bảng cửu chương @item.Key</h4>
+                <ul>
+                    @foreach (var line in item.Value)
+                    {
+                        <li>@line</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Variable_If_Else_Switch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var message1 = "Sử dụng biến ";
+    var message2 = "Sử dụng cấu trúc if else";
+    var message3 = "Sử dụng cấu trúc switch";
+    string message4 = "";
+    int age = 19;
+    var today = DateTime.Now.DayOfWeek.ToString();
+}
+
+<div class="container mt-5">
+    <h3 class="text-primary">
+        @message1
+    </h3>
+
+    <hr />
+
+    <h3 class="text-primary">
+        @message2
+    </h3>
+
+    @{
+        switch (today)
+        {
+            case "Monday":
+                message4 = "Hôm nay là thứ Hai đầu tuần";
+                break;
+            case "Tuesday":
+                message4 = "Hôm nay là thứ Ba";
+                break;
+            case "Wednesday":
+                message4 = "Hôm nay là thứ Tư";
+                break;
+            case "Thursday":
+                message4 = "Hôm nay là thứ Năm";
+                break;
+            case "Friday":
+                message4 = "Hôm nay là thứ Sáu";
+                break;
+            case "Saturday":
+                message4 = "Hôm nay là thứ Bảy";
+                break;
+            case "Sunday":
+                message4 = "Hôm nay là chủ nhật cuối tuần";
+                break;
+            default:
+                message4 = "Không xác định được ngày!";
+                break;
+        }
+    }
+
+    <h4 class="text-secondary mt-3">
+        @message4
+    </h4>
+</div>
+
+

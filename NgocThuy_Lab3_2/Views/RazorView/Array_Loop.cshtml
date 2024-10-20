@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Array_Loop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Array_Loop</h2>
+@{
+    var message = "Sử dụng mảng và vòng lặp";
+    var message1 = "Sử dụng vòng lặp while duyệt mảng student";
+    var message2 = "Sử dụng vòng lặp do while duyệt mảng student";
+    var message3 = "Sử dụng vòng lặp for duyệt mảng student";
+    var message4 = "Sử dụng vòng lặp foreach duyệt mảng student";
+
+    var student = new string[] { "Nguyễn Tuấn Anh", "Hoàng Minh Trí", "Đinh Mạnh Tưởng" };
+
+    var i = 0;
+    var count = student.Length;
+}
+
+<div class="container mt-5">
+    <h3 class="text-primary">@message</h3>
+
+    <h4 class="text-secondary">@message1</h4>
+    <ul>
+        @{
+            i = 0;
+            while (i < count)
+            {
+                <li>@student[i].ToString()</li>
+                i++;
+            }
+        }
+    </ul>
+
+    <hr />
+
+    <h4 class="text-secondary">@message2</h4>
+    <ul>
+        @{
+            i = 0;
+            do
+            {
+                <li>@student[i].ToString()</li>
+                i++;
+            } while (i < count);
+        }
+    </ul>
+
+    <hr />
+
+    <h4 class="text-secondary">@message3</h4>
+    <ul>
+        @{
+            for (i = 0; i < count; i++)
+            {
+                <li>@student[i].ToString()</li>
+            }
+        }
+    </ul>
+
+    <hr />
+
+    <h4 class="text-secondary">@message4</h4>
+    <ul>
+        @{
+            foreach (var item in student)
+            {
+                <li>@item</li>
+            }
+        }
+    </ul>
+</div>
+

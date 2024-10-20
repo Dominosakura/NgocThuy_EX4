@@ -1,0 +1,17 @@
+﻿@model NgocThuy_Lab4_1.Models.Customer
+
+@{
+    ViewBag.Title = "CustomerDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết khách hàng</h2>
+
+<div>
+    <p><strong>Mã số:</strong> @Model.CustomerId</p>
+    <p><strong>Họ và tên:</strong> @Model.FullName</p>
+    <p><strong>Địa chỉ:</strong> @Model.Address</p>
+    <p><strong>Điện thoại:</strong> @Model.Phone</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Số tiền dư:</strong> @Model.Balance</p>
+</div>

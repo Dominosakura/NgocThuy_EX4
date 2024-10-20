@@ -1,0 +1,41 @@
+﻿@model NgocThuy_Lab4_3.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail Product</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Information</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product name:</td>
+                        <td>@Html.DisplayFor(model => model.ProductName)</td>
+                    </tr>
+                    <tr>
+                        <td>Unit:</td>
+                        <td>@Html.DisplayFor(model => model.Unit)</td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td>@Html.DisplayFor(model => model.Price)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr />
+    <p>
+        @Html.ActionLink("Trở lại danh sách", "Index", null, new { @class = "btn btn-primary" })
+    </p>
+</div>

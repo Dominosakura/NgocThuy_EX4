@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <Product>
+    <ProductId>P002</ProductId>
+    <ProductName>Lẩu cá kèo</ProductName>
+    <Unit>Nồi</Unit>
+    <Price>250000</Price>
+  </Product>
+  <Product>
+    <ProductId>P003</ProductId>
+    <ProductName>Lẩu thập cẩm</ProductName>
+    <Unit>Nồi</Unit>
+    <Price>350000</Price>
+  </Product>
+  <Product>
+    <ProductId />
+    <ProductName>Lẩu uyển ương</ProductName>
+    <Unit>Nồi</Unit>
+    <Price>100000</Price>
+  </Product>
+  <Product>
+    <ProductId />
+    <ProductName>Lẩu uyển ương</ProductName>
+    <Unit>Nồi</Unit>
+    <Price>100000</Price>
+  </Product>
+  <Product>
+    <ProductId>PM004</ProductId>
+    <ProductName>Lẩu thoát ế</ProductName>
+    <Unit>Nồi</Unit>
+    <Price>100000.00</Price>
+  </Product>
+</Products>

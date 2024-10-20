@@ -1,0 +1,31 @@
+﻿@model NgocThuy_Lab4_4.Models.Product
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <h4>@Model.ProductName</h4>
+    <hr />
+    <table class="table table-bordered">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <td>@Model.ProductName</td>
+        </tr>
+        <tr>
+            <th>Đơn vị</th>
+            <td>@Model.Unit</td>
+        </tr>
+        <tr>
+            <th>Giá</th>
+            <td>@Model.Price.ToString("C")</td>
+        </tr>
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("Trở về danh sách", "Index", null, new { @class = "btn btn-primary" })
+</p>

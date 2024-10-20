@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Dữ liệu nhận được</h2>
+
+    <div class="text-center">
+        <h3 class="text-secondary">
+            TempData: <span class="text-dark">@TempData["message1"]</span>
+        </h3>
+
+        <h3 class="text-secondary">
+            ViewBag: <span class="text-dark">@ViewBag.message1</span>
+        </h3>
+
+        <h3 class="text-secondary">
+            ViewData: <span class="text-dark">@ViewData["message1"]</span>
+        </h3>
+    </div>
+</div>

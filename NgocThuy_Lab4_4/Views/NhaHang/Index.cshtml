@@ -1,0 +1,66 @@
+﻿@model IEnumerable<NgocThuy_Lab4_4.Models.Catogory>
+@{
+    ViewBag.Title = "Chọn loại thực đơn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chọn loại thực đơn</h2>
+
+
+@using (Html.BeginForm("Index", "NhaHang", FormMethod.Get))
+{
+    <div class="form-group row">
+    
+        <div class="col-md-8">
+            <label for="CategoryId">Chọn loại thực đơn:</label>
+            <select id="CategoryId" name="categoryId" class="form-control" onchange="this.form.submit();">
+                <option value="">--Chọn loại thực đơn--</option>
+                @foreach (var category in Model)
+                {
+                    <option value="@category.CategoryId">@category.CategoryName</option>
+                }
+            </select>
+        </div>
+
+
+        <div class="col-md-4 d-flex align-items-end">
+            @Html.ActionLink("Add Food!!!", "CreateProduct", new { categoryId = ViewBag.CategoryId }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+
+}
+
+@if (ViewBag.Products != null)
+{
+    <h3>Danh sách thực đơn</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã món ăn</th>
+                <th>Tên món ăn</th>
+                <th>Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in ViewBag.Products)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Price.ToString("C")</td>
+                    <td>
+                    <td>
+                        @Html.ActionLink("Details", "ProductDetails", new { productId = product.ProductId }) |
+                        @Html.ActionLink("Edit", "EditProduct", new { productId = product.ProductId }) |
+                        @Html.ActionLink("Delete", "DeleteProduct", new { productId = product.ProductId, categoryId = ViewBag.CategoryId }) 
+
+                </tr>
+            }
+
+
+
+        </tbody>
+    </table>
+
+
+}
